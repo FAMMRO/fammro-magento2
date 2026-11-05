@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © FAMMRO. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="fammro" translate="label" sortOrder="900">
+            <label>FAMMRO</label>
+        </tab>
+        <section id="fammro_integration" translate="label" sortOrder="10"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Chat window</label>
+            <tab>fammro</tab>
+            <resource>Fammro_Integration::config</resource>
+            <group id="widget" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Chat window</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show chat window</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_key" translate="label comment" type="text" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Widget key</label>
+                    <comment>Set automatically by FAMMRO > Connect with FAMMRO.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

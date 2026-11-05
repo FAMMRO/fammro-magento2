@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © FAMMRO. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Fammro_Integration::css/connect.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Fammro\Integration\Block\Adminhtml\Connect"
+                   name="fammro.connect"
+                   template="Fammro_Integration::connect.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

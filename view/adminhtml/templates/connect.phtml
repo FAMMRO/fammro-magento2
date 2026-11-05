@@ -1,0 +1,32 @@
+<?php
+/**
+ * Copyright © FAMMRO. All rights reserved.
+ */
+
+/** @var \Fammro\Integration\Block\Adminhtml\Connect $block */
+/** @var \Magento\Framework\Escaper $escaper */
+$connectUrl = $block->getConnectUrl();
+?>
+<section class="fammro-card">
+    <img src="<?= $escaper->escapeUrl($block->getLogoUrl()) ?>" alt="FAMMRO" width="96" height="96"/>
+    <h2><?= $escaper->escapeHtml(__('Connect FAMMRO')) ?></h2>
+    <p><?= $escaper->escapeHtml(__('The chat runs on FAMMRO. This page only stores the connection.')) ?></p>
+    <?php if ($connectUrl !== ''): ?>
+        <a class="fammro-btn" href="<?= $escaper->escapeUrl($connectUrl) ?>">
+            <?= $escaper->escapeHtml(__('Connect with FAMMRO')) ?>
+        </a>
+    <?php else: ?>
+        <span class="fammro-btn is-disabled"><?= $escaper->escapeHtml(__('Connect with FAMMRO')) ?></span>
+        <p class="fammro-note"><?= $escaper->escapeHtml(__('Connecting requires the shop address on https.')) ?></p>
+    <?php endif; ?>
+    <p class="fammro-status">
+        <?= $escaper->escapeHtml($block->isConnected() ? __('Connected') : __('Not connected')) ?>
+    </p>
+    <?php if ($block->isConnected()): ?>
+        <p class="fammro-note">
+            <?= $escaper->escapeHtml($block->isOrdersConnected()
+                ? __('Order status and returns: connected')
+                : __('Order status: not connected yet, please click Connect again')) ?>
+        </p>
+    <?php endif; ?>
+</section>

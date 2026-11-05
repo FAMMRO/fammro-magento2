@@ -1,0 +1,16 @@
+<?php
+/**
+ * Copyright © FAMMRO. All rights reserved.
+ */
+
+/** @var \Fammro\Integration\Block\Widget $block */
+/** @var \Magento\Framework\Escaper $escaper */
+if (!$block->isEnabled() || $block->getApiKey() === '') {
+    return;
+}
+?>
+<script src="<?= $escaper->escapeUrl($block->getViewFileUrl('Fammro_Integration::fammro-loader.js')) ?>"
+        data-api-key="<?= $escaper->escapeHtmlAttr($block->getApiKey()) ?>"
+        data-backend="<?= $escaper->escapeHtmlAttr($block->getBackendUrl()) ?>"
+        data-consent="required"
+        async></script>

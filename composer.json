@@ -1,0 +1,28 @@
+{
+  "name": "fammro/module-integration",
+  "description": "FAMMRO for Adobe Commerce and Magento Open Source: chat window, order status and returns in one click",
+  "type": "magento2-module",
+  "version": "1.2.0",
+  "license": "proprietary",
+  "homepage": "https://fammro.com",
+  "support": {
+    "email": "support@fammro.com"
+  },
+  "require": {
+    "php": ">=8.1 <8.6",
+    "ext-sodium": "*",
+    "magento/framework": "*",
+    "magento/module-backend": "*",
+    "magento/module-config": "*",
+    "magento/module-integration": "*",
+    "magento/module-store": "*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Fammro\\Integration\\": ""
+    }
+  }
+}

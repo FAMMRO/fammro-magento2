@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © FAMMRO. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Fammro_Integration::connect"
+             title="FAMMRO"
+             translate="title"
+             module="Fammro_Integration"
+             sortOrder="90"
+             resource="Fammro_Integration::config"
+             action="fammro/connect/index"/>
+    </menu>
+</config>
